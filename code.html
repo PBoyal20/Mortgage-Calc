@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code - Mortgage Calculator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark">
+  <header>
+    <nav class="navbar text-light">
+      <ul>
+        <li><a href="index.html" class="text-light">Home</a></li>
+        <li><a href="calculator.html" class="text-light">Calculator</a></li>
+        <li><a href="about.html" class="text-light">About</a></li>
+        <li><a href="code.html" class="text-light">Code</a></li>
+        <li><a href="repo.html" class="text-light">GitRepo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="text-light">JavaScript Code</h1>
+        <pre><code class="text-light" id="code"></code></pre>
+      </div>
+      <div class="col-md-4">
+        <h3 class="text-light">Function Explanation</h3>
+        <ul class="list-group" id="functionExplanation">
+          <li class="list-group-item bg-dark border-light text-light">
+            <strong>Function calculateMortgagePayment:</strong>
+            <br>
+            This function calculates the monthly mortgage payment based on the loan amount, interest rate, and loan term.
+          </li>
+          <li class="list-group-item bg-dark border-light text-light">
+            <strong>Function generatePaymentDetailsTable:</strong>
+            <br>
+            This function generates a table with payment details, including the month, payment amount, principle, interest, total interest, and remaining balance.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('script.js')
+        .then(response => response.text())
+        .then(code => {
+          const codeElement = document.getElementById('code');
+          codeElement.textContent = code;
+        })
+        .catch(error => {
+          console.log('Error fetching code:', error);
+        });
+    });
+  </script>
+</body>
+
+<footer>
+  <p>Mortgage Calculator - by Prabhi Boyal</p>
+</footer>
+</html>
